@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/h8k-design@2.1.1/dist/index.min.css" rel="stylesheet">
+
+  <style>
+    .form-container {
+      padding: 1rem;
+      max-width: 800px;
+      margin: 1rem auto
+    }
+
+    .form-container h2 {
+      text-align: center;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0.5rem;
+    }
+
+    input[placeholder='First Name'] {
+      grid-column: 1/5
+    }
+
+    input[placeholder='Last Name'] {
+      grid-column: 5/9
+    }
+
+    input[placeholder='Age'] {
+      grid-column: 9/13
+    }
+
+    input[placeholder='Address'] {
+      /* Explanation: 
+      a. 1 is first line column (1)
+      b. -1 is last line column (12)
+      
+      so the illustration
+      1   2   3   4   5   6   7   8   9  10  11  12
+      |---|---|---|---|---|---|---|---|---|---|---|
+      */
+      grid-column: 1 / -1
+    }
+
+    input[placeholder='Place of Birth'] {
+      grid-column: 1 / 7
+    }
+
+    input[placeholder='Phone Number'] {
+      grid-column: 7 / 13
+    }
+
+    button {
+      margin: 0;
+      grid-column: 1/-1;
+    }
+
+    @media only screen and (max-width: 600px) {
+      form {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      form input[placeholder] {
+        grid-column: 1/-1
+      }
+    }
+  </style>
+
+  <title>I don't know what am I doing 😂</title>
+</head>
+
+<body>
+  <div class="form-container">
+
+    <h2>Form Application</h2>
+
+    <form>
+      <input placeholder="First Name" />
+      <input placeholder="Last Name" />
+      <input placeholder="Age" />
+      <input placeholder="Address" />
+      <input placeholder="Place of Birth" />
+      <input placeholder="Phone Number" />
+
+      <button type="button">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>
